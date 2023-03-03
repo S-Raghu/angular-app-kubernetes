@@ -3,7 +3,7 @@ FROM node:latest as node
 WORKDIR /app
 COPY . .
 RUN npm install
-RUN npm build --prod 
+RUN npm run build --omit=dev 
 
 # stage 2
 FROM nginx:alpine
